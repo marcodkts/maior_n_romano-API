@@ -15,13 +15,10 @@ tratava apenas de uma simples calculadora, mas também que o código deveria sep
 que estavam separados por caracteres que não fazem parte dos algarismos romanos.
 
 # O Projeto
-## Dependências
-* Flask
 ## Instalação
 Após o download do projeto, certifique-se de que possui as dependências do projeto devidamente instaladas.
 ```
-$ python3 -m venv venv
-$ pip install flask
+$ pip install -r requirements.txt
 ```
 ## Atenção
 Caso sua porta 8080 já esteja sendo utilizada por alguma outra aplicação, fique a vontade para alterar a 
@@ -39,7 +36,15 @@ URL: http://localhost:8080/search
 
 Method: POST
 
-JSON:
+INPUT:
 ```
 { "text": "AXXBLX" }
+```
+OUTPUT:
+Content-Type: application/json
+```
+{
+"number": "LX",
+"value": 60
+}
 ```

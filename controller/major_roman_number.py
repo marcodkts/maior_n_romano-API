@@ -1,18 +1,5 @@
-from flask import Flask, request, jsonify
-app = Flask(__name__)
-    
-@app.route('/search', methods=['POST'])
-def maior_n_romano():
-    nums = {
-        'M':1000,
-        'D':500,
-        'C':100,
-        'L':50,
-        'X':10,
-        'V':5,
-        'I':1
-        }
-    content = request.get_json()["text"]
+def majorRomanNumber(content):
+    nums = {"M": 1000, "D": 500, "C": 100, "L": 50, "X": 10, "V": 5, "I": 1}
     sum = 0
     number = ""
     sum_results = []
@@ -35,14 +22,12 @@ def maior_n_romano():
             sum = 0
             num_results.append(number)
             number = ""
-            
+
     maior_valor = max(sum_results)
     maior_numero = num_results[sum_results.index(maior_valor)]
 
-    return jsonify({
+    return {
         "number": maior_numero,
         "value": maior_valor
-    })
-
-if __name__ == '__main__':
-    app.run(host= '0.0.0.0',debug=True, port='8080')
+    }
+    
