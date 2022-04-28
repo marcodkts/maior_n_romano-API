@@ -9,15 +9,16 @@ def majorRomanNumber(content):
         try:
             value = nums[content[i]]
             number += content[i]
-            if content[i+1] not in nums:
+            if content[i + 1] not in nums:
                 sum += value
-            elif i+1 < len(content) and nums[content[i+1]] > value:
+            elif i + 1 < len(content) and nums[content[i + 1]] > value:
                 sum -= value
-            else: sum += value
-            if i+1 == len(content):
+            else:
+                sum += value
+            if i + 1 == len(content):
                 sum_results.append(sum)
                 num_results.append(number)
-        except Exception:
+        except ValueError:
             sum_results.append(sum)
             sum = 0
             num_results.append(number)
@@ -26,8 +27,5 @@ def majorRomanNumber(content):
     maior_valor = max(sum_results)
     maior_numero = num_results[sum_results.index(maior_valor)]
 
-    return {
-        "number": maior_numero,
-        "value": maior_valor
-    }
-    
+    return {"number": maior_numero, "value": maior_valor}
+       

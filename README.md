@@ -26,7 +26,7 @@ porta dentro do projeto por uma que esteja livre.
 ## Execução
 Após as devidas preparações o projeto está pronto para ser executado.
 ```
-$ python3 main.py
+$ python3 app.py
 ```
 ## Realizando Requisições
 Utilizando o devido método da API, faça sua requisição passando devidamente o dicionário JSON com forme o padrão.
